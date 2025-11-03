@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método 7 Dias - Transforme Sua Semana</title>
+    <!-- Configuração do Tailwind CSS CDN --><script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Importação da fonte Inter */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f9fafb; }
+        .hero {
+            /* Fundo escuro com gradiente */
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+            color: white;
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        .ebook-cover {
+            /* Sombra e transição para o efeito visual */
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s ease;
+        }
+        .cta-button {
+            transition: background-color 0.3s, transform 0.1s;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.5);
+        }
+
+        /* Estilo do modal personalizado */
+        .custom-modal {
+            z-index: 1000;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Modal de Mensagem de Sucesso/Erro --><div id="messageModal" class="custom-modal fixed inset-0 hidden items-center justify-center p-4">
+        <div class="bg-white p-8 rounded-xl shadow-2xl max-w-sm w-full transform transition-all duration-300 scale-95 opacity-0" id="modalContent">
+            <h3 class="text-2xl font-bold mb-4 text-gray-900" id="modalTitle">Sucesso!</h3>
+            <p class="text-gray-700 mb-6" id="modalMessage">Seu e-book está a caminho.</p>
+            <button id="closeModal" class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">Fechar</button>
+        </div>
+    </div>
+
+    <!-- ===== HERO SECTION ===== --><header class="hero text-center">
+        <div class="container">
+            <!-- Imagem Placeholder Responsiva e Estilizada --><img src="https://i.postimg.cc/pL7bk4Df/Chat-GPT-Image-3-de-nov-de-2025-15-06-49.png" 
+                 alt="Capa do ebook Método 7 Dias" 
+                 class="ebook-cover w-48 h-auto mx-auto mb-8 rounded-lg">
+            
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-4">
+                Método <span class="text-indigo-400">7 Dias</span>
+            </h1>
+            <p class="text-xl text-indigo-200 max-w-xl mx-auto mb-10">
+                Transforme sua vida em apenas uma semana com o poder de um plano simples, direto e totalmente prático.
+            </p>
+            <a href="#formulario" class="cta-button bg-indigo-600 text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg inline-block">
+                Quero o Método Agora
+            </a>
+        </div>
+    </header>
+
+    <!-- ===== BENEFÍCIOS ===== --><section class="benefits py-16 bg-gray-50">
+        <div class="container text-center">
+            <h2 class="text-3xl font-bold mb-12 text-gray-800">O que você vai conquistar em 7 dias</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 --><div class="card bg-white p-8 rounded-xl shadow-xl border-t-4 border-indigo-500 hover:shadow-2xl transition duration-300">
+                    <span class="text-4xl mb-3 block">⚡</span>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Produtividade Total</h3>
+                    <p class="text-gray-600">Aprenda a eliminar distrações e focar no que realmente importa, maximizando seu tempo.</p>
+                </div>
+                <!-- Card 2 --><div class="card bg-white p-8 rounded-xl shadow-xl border-t-4 border-indigo-500 hover:shadow-2xl transition duration-300">
+                    <span class="text-4xl mb-3 block">💰</span>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Mentalidade Financeira</h3>
+                    <p class="text-gray-600">Crie hábitos que vão mudar sua forma de lidar com dinheiro e construir riqueza.</p>
+                </div>
+                <!-- Card 3 --><div class="card bg-white p-8 rounded-xl shadow-xl border-t-4 border-indigo-500 hover:shadow-2xl transition duration-300">
+                    <span class="text-4xl mb-3 block">🧠</span>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Desenvolvimento Pessoal</h3>
+                    <p class="text-gray-600">Desperte seu potencial e descubra uma nova, mais forte e confiante versão de si mesmo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SOBRE O MÉTODO ===== --><section class="about py-16 bg-white">
+        <div class="container max-w-3xl text-center">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800">Sobre o Método</h2>
+            <p class="text-lg text-gray-600">
+                O Método 7 Dias foi criado para pessoas que querem resultados reais em pouco tempo. Através de técnicas práticas e um plano de ação diário, você vai reprogramar sua mente e sua rotina para alcançar seus objetivos mais ambiciosos. É o mapa que faltava para sua transformação.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== DEPOIMENTOS ===== --><section class="testimonials py-16 bg-indigo-50">
+        <div class="container text-center">
+            <h2 class="text-3xl font-bold mb-12 text-gray-800">O que dizem sobre o Método</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Depoimento 1 --><div class="card bg-white p-6 rounded-xl shadow-md">
+                    <p class="italic mb-4 text-gray-700">“Em 7 dias, mudei minha rotina por completo. O ebook é direto e transformador.”</p>
+                    <span class="font-semibold text-indigo-600">— Lucas M.</span>
+                </div>
+                <!-- Depoimento 2 --><div class="card bg-white p-6 rounded-xl shadow-md">
+                    <p class="italic mb-4 text-gray-700">“Me ajudou a focar no que realmente importa. Recomendo pra todo mundo!”</p>
+                    <span class="font-semibold text-indigo-600">— Ana P.</span>
+                </div>
+                <!-- Depoimento 3 --><div class="card bg-white p-6 rounded-xl shadow-md">
+                    <p class="italic mb-4 text-gray-700">“Resultados em menos de uma semana. Valeu cada página.”</p>
+                    <span class="font-semibold text-indigo-600">— Rafael D.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FORMULÁRIO DE CAPTURA ===== --><section id="formulario" class="form-section py-20 bg-white">
+        <div class="container max-w-lg text-center">
+            <h2 class="text-3xl font-bold mb-4 text-gray-800">Baixe o Método 7 Dias</h2>
+            <p class="text-gray-600 mb-8">Digite seu nome e e-mail abaixo para receber o ebook e começar sua transformação agora mesmo!</p>
+            
+            <form id="leadForm" class="form-container space-y-4">
+                <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required
+                       class="w-full p-4 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition duration-150">
+                <input type="email" id="email" name="email" placeholder="Seu melhor e-mail" required
+                       class="w-full p-4 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition duration-150">
+                <button type="submit" class="cta-button w-full bg-indigo-600 text-white font-bold py-4 px-8 rounded-lg text-lg shadow-xl hover:bg-indigo-700 transition">
+                    Receber o Método
+                </button>
+            </form>
+
+            <!-- Exibir ID do Usuário para fins de colaboração/debug --><p id="userIdDisplay" class="mt-6 text-sm text-gray-500">
+                ID do Usuário (Firestore): Carregando...
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== CALL TO ACTION FINAL ===== --><section id="cta" class="cta py-16 bg-gray-900 text-center">
+        <div class="container">
+            <h2 class="text-3xl font-bold mb-4 text-white">Está pronto pra mudar sua vida?</h2>
+            <p class="text-xl text-indigo-200 mb-8">Comece agora sua jornada com o Método 7 Dias e veja a diferença em uma semana.</p>
+            <a href="#formulario" class="cta-button bg-green-500 text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg inline-block hover:bg-green-600">
+                Quero o Método
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== --><footer class="bg-gray-800 py-6">
+        <div class="container text-center">
+            <p class="text-gray-400 text-sm">&copy; 2025 Método 7 Dias. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Firebase and Application Logic --><script type="module">
+        // Importações do Firebase
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { 
+            getAuth, 
+            signInAnonymously, 
+            signInWithCustomToken, 
+            onAuthStateChanged 
+        } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { 
+            getFirestore, 
+            addDoc, 
+            collection,
+            setDoc,
+            doc,
+            setLogLevel 
+        } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Variáveis globais obrigatórias do Canvas
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+        let db, auth;
+        let userId = null;
+
+        // Configurações e Inicialização do Firebase
+        try {
+            // Define o nível de log para debug
+            setLogLevel('Debug');
+            
+            const app = initializeApp(firebaseConfig);
+            db = getFirestore(app);
+            auth = getAuth(app);
+            
+            // 1. Função para exibir o modal de mensagem (substitui o alert())
+            function showModal(title, message, isSuccess = true) {
+                const modal = document.getElementById('messageModal');
+                const content = document.getElementById('modalContent');
+                const modalTitle = document.getElementById('modalTitle');
+                const modalMessage = document.getElementById('modalMessage');
+
+                modalTitle.textContent = title;
+                modalMessage.textContent = message;
+                content.classList.remove('border-red-500', 'border-green-500');
+                content.classList.add(isSuccess ? 'border-green-500' : 'border-red-500', 'border-t-4');
+
+                // Exibe o modal
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                
+                // Animação de entrada
+                setTimeout(() => {
+                    content.classList.remove('scale-95', 'opacity-0');
+                    content.classList.add('scale-100', 'opacity-100');
+                }, 10);
+            }
+
+            // Listener para fechar o modal
+            document.getElementById('closeModal').addEventListener('click', () => {
+                const modal = document.getElementById('messageModal');
+                const content = document.getElementById('modalContent');
+                
+                // Animação de saída
+                content.classList.remove('scale-100', 'opacity-100');
+                content.classList.add('scale-95', 'opacity-0');
+                
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                }, 300); // Deve corresponder à duração da transição CSS
+            });
+
+            // 2. Autenticação e obtenção do userId
+            onAuthStateChanged(auth, async (user) => {
+                if (user) {
+                    userId = user.uid;
+                    document.getElementById('userIdDisplay').textContent = `ID do Usuário (Firestore): ${userId}`;
+                } else {
+                    // Tenta o login com o token personalizado ou anônimo
+                    try {
+                        if (initialAuthToken) {
+                            const userCredential = await signInWithCustomToken(auth, initialAuthToken);
+                            userId = userCredential.user.uid;
+                        } else {
+                            const userCredential = await signInAnonymously(auth);
+                            userId = userCredential.user.uid;
+                        }
+                        document.getElementById('userIdDisplay').textContent = `ID do Usuário (Firestore): ${userId}`;
+                    } catch (error) {
+                        console.error("Erro na autenticação:", error);
+                        document.getElementById('userIdDisplay').textContent = `ID do Usuário (Firestore): Erro de Auth`;
+                    }
+                }
+            });
+
+            // 3. Lógica de Submissão do Formulário
+            const leadForm = document.getElementById('leadForm');
+            leadForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                if (!userId) {
+                    showModal("Aguarde", "O sistema de dados ainda está carregando. Tente novamente em instantes.", false);
+                    return;
+                }
+
+                const nome = document.getElementById('nome').value;
+                const email = document.getElementById('email').value;
+
+                try {
+                    // Caminho da coleção privada do usuário: /artifacts/{appId}/users/{userId}/leads
+                    const leadsCollectionPath = `artifacts/${appId}/users/${userId}/leads`;
+                    const leadsRef = collection(db, leadsCollectionPath);
+
+                    // Cria um novo documento (lead)
+                    await addDoc(leadsRef, {
+                        name: nome,
+                        email: email,
+                        timestamp: new Date().toISOString()
+                    });
+
+                    // Feedback de Sucesso
+                    showModal(
+                        "🎉 Sucesso!", 
+                        `Obrigado, ${nome}! Seu e-book foi enviado para ${email}.`, 
+                        true
+                    );
+
+                    // Limpa o formulário
+                    leadForm.reset();
+
+                } catch (error) {
+                    console.error("Erro ao salvar o lead no Firestore:", error);
+                    showModal(
+                        "Erro!", 
+                        "Não foi possível registrar seu e-mail. Por favor, tente novamente.", 
+                        false
+                    );
+                }
+            });
+
+        } catch (error) {
+            console.error("Erro fatal ao inicializar o Firebase:", error);
+            document.getElementById('userIdDisplay').textContent = `ID do Usuário (Firestore): Falha na Inicialização`;
+            showModal("Erro Fatal", "A aplicação não pôde ser iniciada corretamente. Verifique o console para detalhes.", false);
+        }
+    </script>
+</body>
+</html>
